@@ -71,19 +71,17 @@ public class MainActivity extends AppCompatActivity {
                 final LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(LinearLayout.VERTICAL);
                 final EditText titleEditText = new EditText(this);
-                final EditText valueEditText = new EditText(this);
-                titleEditText.setHint("密码名");
-                valueEditText.setHint("密码值");
+                titleEditText.setHint("激活信息");
                 linearLayout.addView(titleEditText);
-                linearLayout.addView(valueEditText);
                 AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("添加新的密码")
+                        .setTitle("添加新的激活码")
                         .setView(linearLayout)
                         .setPositiveButton("添加", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 String title = String.valueOf(titleEditText.getText());
-                                String value = valueEditText.getText().toString();
+                                String[] resCode = title.split("-");
+                                String value = ""+ resCode[0].charAt(0)+resCode[1].charAt(1)+resCode[2].charAt(2)+resCode[3].charAt(3)+resCode[4].charAt(5);
                                 // PERSIST
                                 SQLiteDatabase db = mDbHelper.getWritableDatabase();
                                 ContentValues values = new ContentValues();
@@ -143,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 viewHolder = (ViewHolder) convertView.getTag(R.id.tag);
             }
             viewHolder.tvTitle.setText(password.getTitle());
-            viewHolder.tvValue.setText(password.getValue());
+            viewHolder.tvValue.setText("激活码：  " + password.getValue());
             convertView.setTag(R.id.pos, position);
             return convertView;
         }

@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:layout_centerVertical="true"
+    android:orientation="vertical"
+    android:padding="6dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnDelete"
+    <TextView
+        android:layout_margin="4dp"
+        android:id="@+id/tvValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:onClick="deletePw"
-        android:text="删除" />
-</RelativeLayout>
+        android:textIsSelectable="true"
+        android:textSize="20sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#FFD0CBCD">
+    </View>
+</LinearLayout>
