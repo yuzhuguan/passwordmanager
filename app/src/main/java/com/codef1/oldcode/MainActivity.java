@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 String title = String.valueOf(titleEditText.getText());
                                 String[] resCode = title.split("-");
+                                //445bcda3-eb5b-4a41-90cf-28573cac2f4b
+                                 //4b4fc
                                 String value = ""+ resCode[0].charAt(0)+resCode[1].charAt(1)+resCode[2].charAt(2)+resCode[3].charAt(3)+resCode[4].charAt(5);
                                 // PERSIST
                                 SQLiteDatabase db = mDbHelper.getWritableDatabase();
